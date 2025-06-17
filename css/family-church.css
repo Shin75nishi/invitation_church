@@ -1,0 +1,196 @@
+/* Family Church Page Styles */
+.page-header {
+    height: 40vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/family-church-header.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text);
+    margin-top: 70px;
+}
+
+.page-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+}
+
+.intro-section {
+    padding: 4rem 0;
+}
+
+.intro-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.intro-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.intro-text h2 {
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.intro-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.features-section {
+    background-color: var(--light-bg);
+    padding: 4rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    line-height: 1.6;
+}
+
+.structure-section {
+    padding: 4rem 0;
+}
+
+.structure-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.structure-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.structure-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.structure-text h2 {
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.structure-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.structure-list {
+    list-style-type: none;
+    margin-left: 1rem;
+}
+
+.structure-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.structure-list li::before {
+    content: '\f058';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.cta-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--light-bg);
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.cta-content p {
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        height: 30vh;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .intro-content, .structure-content {
+        flex-direction: column;
+    }
+
+    .intro-image, .structure-image {
+        order: -1;
+    }
+} 

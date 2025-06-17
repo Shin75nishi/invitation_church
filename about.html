@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教会紹介 | 招待キリスト教会</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles for the about page */
+        .page-header {
+            height: 40vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/about-header.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            margin-top: 70px;
+        }
+
+        .page-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+        }
+
+        .about-section {
+            padding: 4rem 0;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-text h2 {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .vision-mission {
+            background-color: var(--light-bg);
+            padding: 4rem 0;
+        }
+
+        .vision-mission-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .vision-box, .mission-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .vision-box h2, .mission-box h2 {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .vision-box p, .mission-box p {
+            line-height: 1.8;
+        }
+
+        .staff-section {
+            padding: 4rem 0;
+        }
+
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .staff-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .staff-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .staff-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .staff-info {
+            padding: 1.5rem;
+        }
+
+        .staff-info h3 {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .staff-info .position {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .staff-info p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .beliefs-section {
+            background-color: var(--light-bg);
+            padding: 4rem 0;
+        }
+
+        .beliefs-content {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+
+        .beliefs-content h2 {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .beliefs-list {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        .beliefs-list li {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .history-section {
+            padding: 4rem 0;
+        }
+
+        .history-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .history-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 45%;
+        }
+
+        .history-item:nth-child(odd) {
+            margin-left: auto;
+        }
+
+        .history-item::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .history-item:nth-child(odd)::before {
+            left: -60px;
+        }
+
+        .history-item:nth-child(even)::before {
+            right: -60px;
+        }
+
+        .history-date {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .history-content {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                height: 30vh;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .history-timeline::before {
+                left: 30px;
+            }
+
+            .history-item {
+                width: 85%;
+                margin-left: auto;
+            }
+
+            .history-item:nth-child(odd)::before,
+            .history-item:nth-child(even)::before {
+                left: -45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>招待キリスト教会</h1>
+                    <p>Invitation Christian Church</p>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="about.html">教会紹介</a></li>
+                    <li><a href="worship.html">礼拝案内</a></li>
+                    <li><a href="family-church.html">家の教会</a></li>
+                    <li><a href="sermons.html">説教</a></li>
+                    <li><a href="prayer.html">とりなしの祈り</a></li>
+                    <li><a href="access.html">アクセス</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1 class="page-title">教会紹介</h1>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>招待キリスト教会について</h2>
+                    <p>招待キリスト教会は、1891年から日本でキリスト教の福音を述べ伝えてきた日本同盟基督教団に属しています。</p>
+                    <p>私たちは、聖書を神の言葉として信じ、イエス・キリストを通して示された神の愛と恵みを伝えることを使命としています。</p>
+                    <p>教会名の「招待」には、神様が私たち一人ひとりを愛と恵みの交わりへと招いておられるという意味が込められています。また、私たちもまた、神様の愛を知り、共に分かち合うコミュニティへと皆さんを招待したいという願いが表されています。</p>
+                    <p>私たちの教会は、年齢や背景を問わず、すべての人に開かれた場所です。初めての方も、信仰を深めたい方も、単に人生の意味を探求している方も、どなたでも歓迎します。</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/church-community.jpg" alt="招待キリスト教会のコミュニティ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-mission">
+        <div class="container">
+            <div class="vision-mission-content">
+                <div class="vision-box">
+                    <h2>ビジョン</h2>
+                    <p>「魂の救い」と「弟子づくり」を通して、神様の愛と恵みを知り、キリストに似た者となり、互いに仕え合い、地域社会に福音を伝える活気ある教会となること。</p>
+                </div>
+                <div class="mission-box">
+                    <h2>ミッション</h2>
+                    <p>イエス・キリストの福音を宣べ伝え、弟子を作り、愛と奉仕を通して地域社会に貢献し、神の栄光を現すこと。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="staff-section">
+        <div class="container">
+            <h2 class="section-title">教会スタッフ</h2>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="images/pastor.jpg" alt="趙 南洙牧師">
+                    </div>
+                    <div class="staff-info">
+                        <h3>趙 南洙</h3>
+                        <p class="position">主任牧師</p>
+                        <p>1998年から招待キリスト教会の主任牧師を務めています。「家の教会」を通じた弟子訓練に情熱を注いでいます。</p>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="images/associate-pastor1.jpg" alt="金田優輝伝道師">
+                    </div>
+                    <div class="staff-info">
+                        <h3>金田 優輝</h3>
+                        <p class="position">伝道師</p>
+                        <p>青年・家族ministryを担当し、聖書に基づいた実践的な信仰生活をサポートしています。</p>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="images/associate-pastor2.jpg" alt="金 聖佑伝道師">
+                    </div>
+                    <div class="staff-info">
+                        <h3>金 聖佑</h3>
+                        <p class="position">伝道師</p>
+                        <p>礼拝と音楽ministry、および教会学校を担当しています。</p>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="images/missionary.jpg" alt="藤島マサオ宣教師">
+                    </div>
+                    <div class="staff-info">
+                        <h3>藤島 マサオ</h3>
+                        <p class="position">協力宣教師</p>
+                        <p>国際的な視点から教会の働きをサポートし、多文化共生の実現に貢献しています。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="beliefs-section">
+        <div class="container">
+            <h2 class="section-title">私たちの信仰</h2>
+            <div class="beliefs-content">
+                <h2>基本的な信仰箇条</h2>
+                <ul class="beliefs-list">
+                    <li>私たちは、聖書が神の霊感によって書かれた誤りのない神のことばであり、信仰と生活の唯一の規範であることを信じます。</li>
+                    <li>私たちは、唯一の真の神が、父・子・聖霊の三位一体として永遠に存在されることを信じます。</li>
+                    <li>私たちは、イエス・キリストが処女マリアから生まれた神の御子であり、十字架上での死と復活によって人類の罪のための完全な贖いを成し遂げられたことを信じます。</li>
+                    <li>私たちは、すべての人が罪を犯して神の栄光に達することができず、イエス・キリストを信じる信仰によってのみ救われることを信じます。</li>
+                    <li>私たちは、聖霊が信者のうちに内住し、クリスチャンの生活において導き、力を与え、教え、慰めを与えることを信じます。</li>
+                    <li>私たちは、イエス・キリストが再び来られ、死者の復活、最後の審判、そして永遠の天国と地獄があることを信じます。</li>
+                    <li>私たちは、すべての信者が地域の教会に積極的に参加し、キリストの体の一部として機能すべきであることを信じます。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="history-section">
+        <div class="container">
+            <h2 class="section-title">教会の歩み</h2>
+            <div class="history-timeline">
+                <div class="history-item">
+                    <div class="history-date">1998年</div>
+                    <div class="history-content">
+                        <p>趙 南洙牧師が招待キリスト教会の主任牧師として就任。</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-date">2000年</div>
+                    <div class="history-content">
+                        <p>小グループによる弟子訓練を開始。</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-date">2006年</div>
+                    <div class="history-content">
+                        <p>「家の教会」システムを導入。</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-date">2010年</div>
+                    <div class="history-content">
+                        <p>現在の教会堂に移転。</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-date">2015年</div>
+                    <div class="history-content">
+                        <p>「家の教会」が20グループに拡大。</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-date">2020年</div>
+                    <div class="history-content">
+                        <p>コロナ禍においてオンライン礼拝を開始。</p>
+                    </div>
+                </div>
+                <div class="history-item">
+                    <div class="history-date">2023年</div>
+                    <div class="history-content">
+                        <p>「家の教会」が32グループに拡大。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <h2>招待キリスト教会</h2>
+                    <p>Invitation Christian Church</p>
+                </div>
+                <div class="footer-contact">
+                    <p><i class="fa-solid fa-location-dot"></i> 〒210-0006 神奈川県川崎市川崎区砂子1-2-3</p>
+                    <p><i class="fa-solid fa-phone"></i> 044-222-3333</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@invitation-church.jp</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav">
+                    <h3>サイトマップ</h3>
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="about.html">教会紹介</a></li>
+                        <li><a href="worship.html">礼拝案内</a></li>
+                        <li><a href="family-church.html">家の教会</a></li>
+                        <li><a href="sermons.html">説教</a></li>
+                        <li><a href="prayer.html">とりなしの祈り</a></li>
+                        <li><a href="access.html">アクセス</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>ソーシャルメディア</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 招待キリスト教会 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

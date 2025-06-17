@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>とりなしの祈り | 招待キリスト教会</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles for the prayer page */
+        .page-header {
+            height: 40vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/prayer-header.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            margin-top: 70px;
+        }
+
+        .page-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+        }
+
+        .prayer-intro {
+            padding: 4rem 0;
+        }
+
+        .prayer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .prayer-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .prayer-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .prayer-text h2 {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .prayer-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .prayer-list-section {
+            background-color: var(--light-bg);
+            padding: 4rem 0;
+        }
+
+        .prayer-list {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .prayer-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .prayer-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .prayer-item h3 {
+            font-family: var(--font-serif);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .prayer-item p {
+            line-height: 1.8;
+        }
+
+        .prayer-form-section {
+            padding: 4rem 0;
+        }
+
+        .prayer-form {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                height: 30vh;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .prayer-content {
+                flex-direction: column;
+            }
+
+            .prayer-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>招待キリスト教会</h1>
+                    <p>Invitation Christian Church</p>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="about.html">教会紹介</a></li>
+                    <li><a href="worship.html">礼拝案内</a></li>
+                    <li><a href="family-church.html">家の教会</a></li>
+                    <li><a href="sermons.html">説教</a></li>
+                    <li><a href="prayer.html">とりなしの祈り</a></li>
+                    <li><a href="access.html">アクセス</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1 class="page-title">とりなしの祈り</h1>
+    </section>
+
+    <section class="prayer-intro">
+        <div class="container">
+            <div class="prayer-content">
+                <div class="prayer-text">
+                    <h2>とりなしの祈りについて</h2>
+                    <p>「とりなしの祈り」とは、他の人々のために祈ることです。私たちは、互いのために祈り合うことで、神様の愛と恵みを分かち合います。</p>
+                    <p>聖書には「互いのために祈りなさい。義人の祈りは大きな力があり、効果をもたらします」（ヤコブの手紙5:16）とあります。</p>
+                    <p>招待キリスト教会では、教会員だけでなく、地域の方々や世界中の人々のために祈りをささげています。あなたの祈りのリクエストがありましたら、ぜひお知らせください。</p>
+                    <p>また、毎週水曜日の夜7時から祈祷会を行っています。どなたでもご参加いただけますので、ぜひお越しください。</p>
+                </div>
+                <div class="prayer-image">
+                    <img src="images/prayer-meeting.jpg" alt="祈祷会の様子">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="prayer-list-section">
+        <div class="container">
+            <h2 class="section-title">今週の祈りの課題</h2>
+            <div class="prayer-list">
+                <div class="prayer-item">
+                    <h3>教会のために</h3>
+                    <p>・主日礼拝が神様の臨在に満たされますように</p>
+                    <p>・新しく来られる方々が温かく迎えられますように</p>
+                    <p>・家の教会が活性化され、多くの実を結びますように</p>
+                    <p>・教会学校の子どもたちが神様を知り、信仰の中で成長しますように</p>
+                </div>
+                <div class="prayer-item">
+                    <h3>地域社会のために</h3>
+                    <p>・川崎市の平和と安全のために</p>
+                    <p>・地域の学校、病院、行政のために</p>
+                    <p>・困難な状況にある方々に神様の助けがありますように</p>
+                    <p>・地域の人々に福音が届きますように</p>
+                </div>
+                <div class="prayer-item">
+                    <h3>日本と世界のために</h3>
+                    <p>・日本の霊的リバイバルのために</p>
+                    <p>・政治的指導者たちに神様の知恵が与えられますように</p>
+                    <p>・自然災害や戦争で苦しんでいる人々のために</p>
+                    <p>・世界中の宣教師たちの働きが祝福されますように</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="prayer-form-section">
+        <div class="container">
+            <h2 class="section-title">祈りのリクエスト</h2>
+            <p class="text-center">あなたの祈りのリクエストをお知らせください。教会の祈りの課題として覚えさせていただきます。</p>
+            <div class="prayer-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prayer-type">祈りの種類</label>
+                        <select id="prayer-type" name="prayer-type" required>
+                            <option value="">選択してください</option>
+                            <option value="healing">癒し</option>
+                            <option value="guidance">導き</option>
+                            <option value="family">家族</option>
+                            <option value="work">仕事</option>
+                            <option value="spiritual">霊的成長</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prayer-request">祈りのリクエスト</label>
+                        <textarea id="prayer-request" name="prayer-request" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="confidential"> このリクエストは非公開にしてください
+                        </label>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn primary-btn">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <h2>招待キリスト教会</h2>
+                    <p>Invitation Christian Church</p>
+                </div>
+                <div class="footer-contact">
+                    <p><i class="fa-solid fa-location-dot"></i> 〒210-0006 神奈川県川崎市川崎区砂子1-2-3</p>
+                    <p><i class="fa-solid fa-phone"></i> 044-222-3333</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@invitation-church.jp</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-nav">
+                    <h3>サイトマップ</h3>
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="about.html">教会紹介</a></li>
+                        <li><a href="worship.html">礼拝案内</a></li>
+                        <li><a href="family-church.html">家の教会</a></li>
+                        <li><a href="sermons.html">説教</a></li>
+                        <li><a href="prayer.html">とりなしの祈り</a></li>
+                        <li><a href="access.html">アクセス</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>ソーシャルメディア</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 招待キリスト教会 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
